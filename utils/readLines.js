@@ -1,11 +1,6 @@
-const fs = require("fs").promises;
+const readFile = require("./readFile");
 
-/**
- * Read all the lines in the file as strings.
- * @param file the file to read
- * @returns {Promise<string[]>} the lines
- */
 const readLines = (file) =>
-  fs.readFile(file, "utf-8").then((content) => content.split(/\r?\n/));
+  readFile(file).then((content) => content.split(/\r?\n/));
 
 module.exports = readLines;
